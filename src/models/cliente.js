@@ -3,7 +3,7 @@ import { Model, DataTypes } from "sequelize";
 export default (sequelize) => {
   class Cliente extends Model {
     static associate(models) {
-      // associações vêm aqui depois
+      Cliente.hasMany(models.Encomenda, { foreignKey: 'clienteId' });
     }
   }
 
