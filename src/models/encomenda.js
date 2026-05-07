@@ -5,6 +5,7 @@ export default (sequelize) => {
   class Encomenda extends Model {
     static associate(models) {
       Encomenda.belongsTo(models.Cliente, { foreignKey: 'clienteId'});
+      Encomenda.hasMany(models.ItemEncomenda, { foreignKey: 'encomendaId' });
     }
   }
 

@@ -3,6 +3,7 @@ export default (sequelize) => {
   class Produto extends Model {
     static associate(models) {
       Produto.belongsTo(models.Categoria, { foreignKey: 'categoriaId' });
+      Produto.hasMany(models.ItemEncomenda, { foreignKey: 'produtoId' });
     }
   }
   Produto.init({
