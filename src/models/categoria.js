@@ -4,6 +4,7 @@ export default (sequelize) => {
 
   class Categoria extends Model {
     static associate(models) {
+      Categoria.hasMany(models.Produto, { foreignKey: 'categoriaId' });
 
     }
   }
