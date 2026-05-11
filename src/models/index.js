@@ -19,4 +19,20 @@ const sequelize = new Sequelize(
   config
 );
 
-export { sequelize };
+import ClienteModel from './cliente.js';
+import CategoriaModel from './categoria.js';
+import ProdutoModel from './produto.js';
+import EncomendaModel from './encomenda.js';
+import ItemEncomendaModel from './itemencomenda.js';
+import AdministradoraModel from './administradora.js';
+
+const Cliente = ClienteModel(sequelize);
+const Categoria = CategoriaModel(sequelize);
+const Produto = ProdutoModel(sequelize);
+const Encomenda = EncomendaModel(sequelize);
+const ItemEncomenda = ItemEncomendaModel(sequelize);
+const Administradora = AdministradoraModel(sequelize);
+
+const db = { sequelize, Cliente, Categoria, Produto, Encomenda, ItemEncomenda, Administradora };
+
+export default db;
