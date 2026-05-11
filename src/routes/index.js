@@ -1,10 +1,8 @@
 import express from 'express'
-import clientes from './clienteRoute.js'
+import rotas from './clienteRoute.js'
 
 
 export default app => {
-    app.use(
-        express.json(),
-        clientes,
-    );
+    app.use(express.json());
+    app.use(rotas);
 };
