@@ -1,15 +1,14 @@
-import database from '../models/index.js'
+import Controller from './Controller.js';
+import CategoriaServices from '../services/CategoriaServices.js';
 
-class CategoriaController {
-    static async pegaTodos (req, res) {
-        try {
-            const ListaDeCategorias = await database.Categoria.findAll();
-            return res.status(200).json(ListaDeCategorias)
 
-        } catch (erro) {
-            // erro
-        }
+const categoriaServices = new CategoriaServices();
+class CategoriaController extends Controller {
+    constructor() {
+        super(categoriaServices);
     }
+
 }
+
 
 export default CategoriaController;

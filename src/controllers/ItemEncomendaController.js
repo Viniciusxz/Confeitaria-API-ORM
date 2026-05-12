@@ -1,13 +1,11 @@
-import database from "../models/index.js";
+import Controller from "./Controller.js";
+import ItemEncomendaServices from "../services/ItemEncomendaServices.js";
 
-class ItemEncomendaController {
-    static async pegaTodos (req, res) {
-        try {
-            const ListaItemEncomendas = await database.ItemEncomenda.findAll();
-            return res.status(200).json(ListaItemEncomendas);
-        } catch (erro) {
-            // erro
-        }
+const itemencomendaServices = new ItemEncomendaServices();
+
+class ItemEncomendaController  extends Controller {
+    constructor() {
+        super(itemencomendaServices);
     }
 }
 

@@ -1,13 +1,11 @@
-import database from "../models/index.js"
+import Controller from "./Controller.js";
+import ProdutoServices from "../services/ProdutoServices.js";
 
-class ProdutoController {
-    static async pegaTodos (req, res) {
-        try {
-            const ListaDeProdutos = await database.Produto.findAll();
-            return res.status(200).json(ListaDeProdutos);
-        } catch (erro) {
-            // erro
-        }
+const produtoServices = new ProdutoServices();
+
+class ProdutoController  extends Controller {
+    constructor() {
+        super(produtoServices)
     }
 }
 
