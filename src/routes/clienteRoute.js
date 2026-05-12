@@ -5,9 +5,11 @@ import EncomendaController from '../controllers/EncomendaController.js';
 import ItemEncomendaController from '../controllers/ItemEncomendaController.js';
 import ProdutoController from '../controllers/ProdutoController.js';
 
+const clienteController = new ClienteController();
+
 const router = Router();
 
-router.get('/clientes', ClienteController.pegaTodas);
+router.get('/clientes', (req, res) => clienteController.pegaTodos(req, res));
 router.get('/categorias', CategoriaController.pegaTodos);
 router.get('/encomendas', EncomendaController.pegaTodos);
 router.get('/itensencomendas', ItemEncomendaController.pegaTodos);
