@@ -15,7 +15,7 @@ export async function up(queryInterface, Sequelize) {
       type: Sequelize.INTEGER,
       allowNull: false,
       references :{
-        model: 'categorias',
+        model: 'categoria',
         key: 'id'
       }
     },
